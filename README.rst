@@ -67,17 +67,21 @@ Search through the content of the manpages:
 
 It will give this back as result:
 
-        XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
-        XButtonEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XMotionEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XKeyEvent                                                    3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XSelectInput                                                 3                    , unless the do_not_propagate mask prohibits it.  Setting the **event**-mask attribute of a **window** over
-        XCrossingEvent                                               3                    ;       /* Display the **event** was read from */         **Window** **window**;  /* ``**event**'' **window** reported
-        XDestroySubwindows                                           3                     DestroyNotify **event** for each **window**.  The **window** should never be referenced again.  If the
-        XReparentWindow                                              3                     override_redirect member returned in this **event** is set to the window's correspond- ing attribute.  **Window** manager
-        XGravityEvent                                                3                     */         **Window** **event**;         **Window** **window**;         int x, y; } XGravityEvent; When you receive this **event**
+        
+.. sourcecode:: bash
 
-
+    XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
+            XButtonEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XMotionEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XKeyEvent                                                    3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XSelectInput                                                 3                    , unless the do_not_propagate mask prohibits it.  Setting the **event**-mask attribute of a **window** over
+            XCrossingEvent                                               3                    ;       /* Display the **event** was read from */         **Window** **window**;  /* ``**event**'' **window** reported
+            XDestroySubwindows                                           3                     DestroyNotify **event** for each **window**.  The **window** should never be referenced again.  If the
+            XReparentWindow                                              3                     override_redirect member returned in this **event** is set to the window's correspond- ing attribute.  **Window** manager
+            XGravityEvent                                                3                     */         **Window** **event**;         **Window** **window**;         int x, y; } XGravityEvent; When you receive this **event**
+    
+    
+    
 
 Index the tags and the content of your projects:
 
@@ -132,4 +136,4 @@ More analyze strategies are needed for source files. Comments should be recogniz
 
 The rebuild commando is not working at the moment.
 
-For haskell files are not taggable. Hasktags should be installed for that. I also would like to switch to excuberant ctags, but the tags file is more complex to parse than the etags format. So I haven't done that yet. 
+For haskell files are not taggable. Hasktags should be installed for that. I also would like to switch to excuberant ctags, but the tags file is more complex to parse than the etags format. So I haven't done that yet.
