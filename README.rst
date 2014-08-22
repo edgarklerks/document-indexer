@@ -4,6 +4,7 @@ Document indexer
 A simple way to document all your development related files into one elastic search instance, 
 which can be searched through a set of command line utilities. 
 
+
 Installation
 ============
 
@@ -129,4 +130,6 @@ When source files are search, all tags in the file are returned, we only want to
 
 More analyze strategies are needed for source files. Comments should be recognized and indexed. Types should be calculated for static languages. Maybe vulnerabilities should be searched and indexed. 
 
-The rebuild commando is not working at the moment. 
+The rebuild commando is not working at the moment.
+
+For haskell files are not taggable. Hasktags should be installed for that. I also would like to switch to excuberant ctags, but the tags file is more complex to parse than the etags format. So I haven't done that yet. 
