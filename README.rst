@@ -70,7 +70,8 @@ It will give this back as result:
         
 .. sourcecode:: bash
 
-    XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
+            Title                                                        Section                Highlighting
+            XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
             XButtonEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
             XMotionEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
             XKeyEvent                                                    3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
