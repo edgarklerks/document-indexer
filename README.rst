@@ -122,6 +122,11 @@ You can create a conf file with all your sources you want to have in your index,
         contlib = ["/home/eklerks/sources/sanoma/content-library"]
         home-conf = ["/home/eklerks/sources/vim-zsh-vimperator-xmonad-configuration"]
 
+Creating your own searchers
+=========================
+
+It is quite easy to create your own searches, like search_man_pages. See SearchAllManPages for an example. For building a query you can refer to the elasticsearch documentation. You can alter your elasticsearch instance by changing Init.hs
+
 Errata
 ======
 
