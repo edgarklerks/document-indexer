@@ -4,6 +4,7 @@ Document indexer
 A simple way to document all your development related files into one elastic search instance, 
 which can be searched through a set of command line utilities. 
 
+
 Installation
 ============
 
@@ -66,17 +67,22 @@ Search through the content of the manpages:
 
 It will give this back as result:
 
-        XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
-        XButtonEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XMotionEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XKeyEvent                                                    3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
-        XSelectInput                                                 3                    , unless the do_not_propagate mask prohibits it.  Setting the **event**-mask attribute of a **window** over
-        XCrossingEvent                                               3                    ;       /* Display the **event** was read from */         **Window** **window**;  /* ``**event**'' **window** reported
-        XDestroySubwindows                                           3                     DestroyNotify **event** for each **window**.  The **window** should never be referenced again.  If the
-        XReparentWindow                                              3                     override_redirect member returned in this **event** is set to the window's correspond- ing attribute.  **Window** manager
-        XGravityEvent                                                3                     */         **Window** **event**;         **Window** **window**;         int x, y; } XGravityEvent; When you receive this **event**
+        
+.. sourcecode:: bash
 
-
+            Title                                                        Section                Highlighting
+            XFilterEvent                                                 3                    , **Window** Specifies the **event** to filter. Specifies the **window** for which the filter is to be
+            XButtonEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XMotionEvent                                                 3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XKeyEvent                                                    3                     request */         Display *display;       /* Display the **event** was read from */         **Window** **window**
+            XSelectInput                                                 3                    , unless the do_not_propagate mask prohibits it.  Setting the **event**-mask attribute of a **window** over
+            XCrossingEvent                                               3                    ;       /* Display the **event** was read from */         **Window** **window**;  /* ``**event**'' **window** reported
+            XDestroySubwindows                                           3                     DestroyNotify **event** for each **window**.  The **window** should never be referenced again.  If the
+            XReparentWindow                                              3                     override_redirect member returned in this **event** is set to the window's correspond- ing attribute.  **Window** manager
+            XGravityEvent                                                3                     */         **Window** **event**;         **Window** **window**;         int x, y; } XGravityEvent; When you receive this **event**
+    
+    
+    
 
 Index the tags and the content of your projects:
 
@@ -116,6 +122,11 @@ You can create a conf file with all your sources you want to have in your index,
         contlib = ["/home/eklerks/sources/sanoma/content-library"]
         home-conf = ["/home/eklerks/sources/vim-zsh-vimperator-xmonad-configuration"]
 
+Creating your own searchers
+=========================
+
+It is quite easy to create your own searches, like search_man_pages. See SearchAllManPages for an example. For building a query you can refer to the elasticsearch documentation. You can alter your elasticsearch instance by changing Init.hs
+
 Errata
 ======
 
@@ -129,4 +140,6 @@ When source files are search, all tags in the file are returned, we only want to
 
 More analyze strategies are needed for source files. Comments should be recognized and indexed. Types should be calculated for static languages. Maybe vulnerabilities should be searched and indexed. 
 
-The rebuild commando is not working at the moment. 
+The rebuild commando is not working at the moment.
+
+For haskell files are not taggable. Hasktags should be installed for that. I also would like to switch to excuberant ctags, but the tags file is more complex to parse than the etags format. So I haven't done that yet.
